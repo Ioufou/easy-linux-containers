@@ -21,9 +21,10 @@ echo "[create] Launching LXD container with name $CONTAINER_NAME and image $CONT
 lxc launch "$CONTAINER_IMAGE" "$CONTAINER_NAME"
 sleep 5
 echo "[create] Updating and installing packages..."
-lxc exec "$CONTAINER_NAME" -- apt update
-lxc exec "$CONTAINER_NAME" -- apt -y upgrade
-lxc exec "$CONTAINER_NAME" -- apt -y install openssh-server python3 sudo
+ENV_VARS="--env DEBIAN_FRONTEND=noninteractive --env NEEDRESTART_MODE=a"
+lxc exec "$CONTAINER_NAME" -- apt-get update
+lxc exec "$CONTAINER_NAME" -- apt-get -y upgrade
+lxc exec "$CONTAINER_NAME" -- apt-get -y install openssh-server python3 sudo
 
 
 # Adding user
