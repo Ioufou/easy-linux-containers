@@ -31,7 +31,7 @@ This project exposes the following ports on the host system :
 ## Installation
 
 ```
-$ git clone https://github.com/Ioufou/easy-linux-containers.git
+$ git clone https://github.com/loufou-lf/easy-linux-containers.git
 $ cd easy-linux-containers
 $ docker compose up -d --build
 ```
@@ -63,3 +63,4 @@ For questions or support, please reach out:
 ---
 
 Copyright © 2026 [LouFou](https://github.com/loufou-lf)
+
